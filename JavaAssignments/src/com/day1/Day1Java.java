@@ -43,7 +43,7 @@ public class Day1Java {
 		int x11 = 3;
 		int y1 = 5;
 		swap(x11, y1);
-		int i = 1;
+//		int i = 1;
 		// 5
 		System.out.println("Is 3 prime? " + primeNumber(x11));
 		System.out.println("Is 21 prime? " + primeNumber(21));
