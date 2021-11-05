@@ -29,7 +29,9 @@ public class HashMapDemo {
 		System.out.println(pwd.size());
 		System.out.println(pwd.replace("mani", "444"));
 		System.out.println(pwd);
+		
+		
 
 	}
-
+	
 }
