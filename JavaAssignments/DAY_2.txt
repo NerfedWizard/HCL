@@ -1,0 +1,225 @@
+//Day 2
+//#1
+public static int smallestNumber(int x, int y, int z) {
+		int min = y;
+		if (y > x) {
+			min = x;
+		}
+		if (z < x) {
+			min = z;
+		}
+		return min;
+	}
+//#2
+public static String middleChar(String find) {
+		char[] str = find.toCharArray();
+		String middle = "";
+		int index = str.length / 2;
+		if (str.length % 2 == 0) {
+			middle = Character.toString(str[index - 1]) + Character.toString(str[index]);
+		} else {
+			middle = Character.toString(str[index]);
+		}
+		return middle;
+	}
+//#3
+public static void countVowels(String str) {
+		char[] st = str.toLowerCase().toCharArray();
+		char[] vls = { 'a', 'e', 'i', 'o', 'u' };
+		int count = 0;
+		for (Character c : st) {
+			for (Character v : vls) {
+				if (c == v) {
+					count++;
+				}
+			}
+		}
+		System.out.println("Number of Vowels in the string: " + count);
+	}
+//#4
+public class Room {
+	private int roomNo;
+	private String roomType;
+	private double roomArea;
+	private int ACMachine;
+
+	public Room(int roomNo, String roomType, double roomArea, int ACMachine) {
+		this.setRoomNo(roomNo);
+		this.setACMachine(ACMachine);
+		this.setRoomArea(roomArea);
+		this.setRoomType(roomType);
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+	public int displayACMachine() {
+		return ACMachine;
+	}
+
+	public void setACMachine(int aCMachine) {
+		ACMachine = aCMachine;
+	}
+
+	public double displayRoomArea() {
+		return roomArea;
+	}
+
+	public void setRoomArea(double roomArea) {
+		this.roomArea = roomArea;
+	}
+
+	public String displayRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
+
+	public int displayRoomNo() {
+		return roomNo;
+	}
+
+	public void setRoomNo(int roomNo) {
+		this.roomNo = roomNo;
+	}
+
+}
+//#5
+public class A {
+	int a = 100;
+
+	public void display() {
+		System.out.printf("a in A = %d\n", a);
+	}
+
+}
+
+class B extends A {
+	private int a = 123;
+
+	public void display() {
+		System.out.printf("a in B = %d\n", a);
+	}
+
+}
+
+class C extends B {
+	private int a = 543;
+
+	public void display() {
+		System.out.printf("a in C = %d\n", a);
+	}
+
+}
+//#6
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Addition {
+	public static void main(String[] args) {
+		Random rd = new Random();
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < 10; i++) {
+			int x = rd.nextInt(20);
+			list.add(x);
+		}
+		addition(list);
+	}
+	public static void addition(List<Integer> i) {
+		String str = i.get(0).toString();
+		Integer sum = i.get(0);
+		for (int n = 1; n < i.size(); n++) {
+			sum += n;
+			str += " + " + i.get(n).toString();
+			String end = " = " + sum.toString();
+			System.out.println(str + end);
+		}
+	}
+}
+//#7
+public class InheritenceExample {
+
+	public static void main(String[] args) {
+		Bike M = new Bike();
+	}
+
+}
+
+class Bike extends Cycle {
+	String define_me() {
+		return "a cycle with an engine.";
+	}
+
+	Bike() {
+		Cycle cyc = new Cycle();
+		System.out.println("Hello I am a motorcycle I am " + define_me());
+		String temp = cyc.define_me();
+		System.out.println("My ancestor is a cycle who is " + temp);
+	}
+
+}
+
+class Cycle {
+	String define_me() {
+		return "a vehicle with pedals.";
+	}
+
+}
+//#8
+class Animal {
+	void walk() {
+		System.out.println("I am walking");
+	}
+}
+
+class Dog extends Animal {
+	void eat() {
+		System.out.println("I am eating");
+	}
+
+	void bark() {
+		System.out.println("I am barking");
+	}
+}
+
+public class InheritenceExample {
+	public static void main(String[] args) {
+		Dog dog = new Dog();
+		dog.walk();
+		dog.eat();
+		dog.bark();
+	}
+}
+//#9
+class Child1 extends Parent {
+}
+
+class Child2 extends Parent {
+}
+
+public class D2Q9 {
+	public static void main(String[] args) {
+		Parent p = new Parent();
+		Child1 c1 = new Child1();
+		Child2 c2 = new Child2();
+		System.out.println(c1 instanceof Parent);
+		System.out.println(c2 instanceof Parent);
+		System.out.println(p instanceof Child1);
+		System.out.println(p instanceof Child2);
+		p = c1;
+		System.out.println(p instanceof Child1);
+		System.out.println(p instanceof Child2);
+		p = c2;
+		System.out.println(p instanceof Child1);
+		System.out.println(p instanceof Child2);
+	}
+}
+
+class Parent {
+}
+
+

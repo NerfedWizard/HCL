@@ -1,0 +1,59 @@
+//Day 3
+
+
+/**1.	Write a Java program to convert all the characters in a string to lowercase.*/
+
+public static void main(String[] args) {
+	String st = "This Is tHe String I am PUTTIng for THIs TEST";
+	System.out.println(lowerCase(st));
+	}
+	private static String lowerCase(String st) {
+		String s = "";
+		char[] ch = st.toLowerCase().toCharArray();
+		for (Character c : ch) {
+		s += c;
+	}
+	return s;
+
+	}
+
+/**2.	Write a Java program to replace all the 'd' occurrence characters with ‘h’ characters in each string. */
+System.out.println(replace("Dog, Dolphin, Dand, Dot, Dut, Di"));//Tester
+public static String replace(String old) {
+		String chng = "";
+		char[] ch = old.toLowerCase().toCharArray();
+		for (Character c : ch) {
+			if (c.equals('d')) {
+				c = 'h';
+			}
+			chng += c;
+		}
+		
+/**3.	write a Java program to sort an integer array of 10 elements in ascending. */
+// Q3
+		Integer[] old = { 1, 4, 6, 9, 0, 6, 4, 3, 2, 5 };
+		System.out.println(Arrays.toString(old));
+		for (int i : sortAsc(old)) {
+			System.out.println(i);
+		}
+		public static Integer[] sortAsc(Integer[] old) {
+		Arrays.sort(old);
+		return old;
+	}
+/**4.	write a Java program to search for an element of an integer array of 10 elements. */
+		Random rd = new Random();
+		int[] nums = new int[10];
+		for (int i = 0; i < 10; i++) {
+			int x = rd.nextInt(25);
+			nums[i] = x;
+			System.out.println(x);
+		}
+		System.out.println(5 + " is in the list: " + foundInt(5, nums));
+}
+		public static boolean foundInt(int searchD, int[] nums) {
+		for (int i : nums) {
+			if (i == searchD) {
+				return true;
+			}
+		}
+/**5.	Accept a string, and two indices(integers), and print the substring consisting of all characters inclusive range from ..to .  */

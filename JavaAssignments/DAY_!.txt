@@ -1,0 +1,41 @@
+//Day 1
+//#1
+    System.out.println("-5 + 8 * 6 = " + -5 + 8 * 6);
+	System.out.println("(55+9) % 9 = " + (55 + 9) % 9);
+	System.out.println("20 + -3*5 / 8 = " + 20 + -3 * 5 / 8);
+	int x = 5 + 15 / 3 * 2 - 8 % 3;
+	System.out.println("5 + 15 / 3 * 2 - 8 % 3 = " + x);
+//#2
+	int y = 20 + 4;
+	System.out.println("20 + 4 = " + y);
+	int x111 = 20 - 4;
+	System.out.println("20 - 4 = " + x111);
+	System.out.println("20 * 4 = " + 20 * 4);
+	System.out.println("20 / 4 = " + 20 / 4);
+	System.out.println("20 % 4 = " + 20 % 4);
+//#3
+	int total = 0;
+		Scanner sc = new Scanner(System.in);
+		int x1 = 0;
+		System.out.println("What is the input? ");
+		int count = 0;
+		do {
+			x1 += sc.nextInt();
+			count++;
+		} while (count < 3);
+		total = x1 / count;
+		System.out.println("The Average of the inputs is: " + total);
+//#4
+	int x11 = 3;
+	int y1 = 5;
+	swap(x11, y1);
+	private static void swap(int x, int y) {
+		System.out.println("x = " + x + " y = " + y);
+		int temp = x;
+		x = y;
+		y = temp;
+		System.out.println("x = " + x + " y = " + y);
+
+	}
+//#5
+	
