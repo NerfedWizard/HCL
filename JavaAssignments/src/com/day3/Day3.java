@@ -29,7 +29,8 @@ public class Day3 {
 		}
 		System.out.println(5 + " is in the list: " + foundInt(5, nums));
 	}
-
+	
+/**Question 4*/
 	public static boolean foundInt(int searchD, int[] nums) {
 		for (int i : nums) {
 			if (i == searchD) {
