@@ -61,8 +61,7 @@ public class PreDefinedFunctionalInterface {
 		 * vii) Find male and female employees are there in the CS dept and Mechanical dept?
 		 * viii) Find the average salary of male and female employees?
 		 * ix) Differentiate the employess who are younger or equal to 30yrs from those employees who are older than 25 yrs?
-		 * x)List down the names of all employees in each dept?
-		 *  
+		 * x)List down the names of all employees in each dept? 
 		 * */
 		
 	}
