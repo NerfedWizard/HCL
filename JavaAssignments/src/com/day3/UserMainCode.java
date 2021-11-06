@@ -3,7 +3,7 @@ package com.day3;
 public class UserMainCode {
 
 	public static void main(String[] args) {
-		String erin = "poop";
+		String erin = "erin";
 		String honey = "Honey";
 		String khan = "khan";
 		String kitchen = "kitchen";
