@@ -33,7 +33,7 @@ public class Day3 {
 		String test5 = "HelloWorld";
 		System.out.println(stringRange(1, 1, test5));
 		
-		//Q6
+		//Q6 Testing
 		String bob = "Bob";
 		String racecar = "racecar";
 		String helmet = "helmet";
