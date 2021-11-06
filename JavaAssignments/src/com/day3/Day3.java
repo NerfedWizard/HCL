@@ -6,20 +6,20 @@ import java.util.Random;
 public class Day3 {
 
 	public static void main(String[] args) {
-		// Q1
+		// Q1 Testing
 		String st = "This Is tHe String I am PUTTIng for THIs TEST";
 		System.out.println(lowerCase(st));
 
-		// Q2
+		// Q2 Testing
 		System.out.println(replace("Dog, Dolphin, Dand, Dot, Dut, Di"));
 
-		// Q3
+		// Q3 Testing
 		Integer[] old = { 1, 4, 6, 9, 0, 6, 4, 3, 2, 5 };
 		System.out.println(Arrays.toString(old));
 		for (int i : sortAsc(old)) {
 			System.out.println(i);
 		}
-		// Q4
+		// Q4 Testing
 		Random rd = new Random();
 		int[] nums = new int[10];
 		for (int i = 0; i < 10; i++) {
@@ -28,9 +28,35 @@ public class Day3 {
 			System.out.println(x);
 		}
 		System.out.println(5 + " is in the list: " + foundInt(5, nums));
+
+		// Q5 Testing
+		String test5 = "HelloWorld";
+		System.out.println(stringRange(1, 1, test5));
+
 	}
-	
-/**Question 4*/
+
+	// Q5
+	private static String stringRange(int first, int last, String test5) {
+		String result = "";
+		char[] chr = test5.toCharArray();
+		if(first > last) {
+			int temp = first;
+			first = last;
+			last = temp;
+		}else if(first == last) {
+			last++;
+		}
+		if (last <= test5.length() - 1 || first > 0) {
+			for (int i = first; i < last; i++) {
+				result += chr[i];
+			}
+		} else {
+			return "Index(es) out of bounds for string!!!!";
+		}
+		return result;
+	}
+
+	// Q4
 	public static boolean foundInt(int searchD, int[] nums) {
 		for (int i : nums) {
 			if (i == searchD) {
@@ -40,7 +66,7 @@ public class Day3 {
 		return false;
 	}
 
-	// D3Q1
+	// Q1
 	private static String lowerCase(String st) {
 		String s = "";
 		char[] ch = st.toLowerCase().toCharArray();
@@ -51,6 +77,7 @@ public class Day3 {
 
 	}
 
+	// Q2
 	public static String replace(String old) {
 		String chng = "";
 		char[] ch = old.toLowerCase().toCharArray();
@@ -64,6 +91,7 @@ public class Day3 {
 		return chng;
 	}
 
+	// Q3
 	public static Integer[] sortAsc(Integer[] old) {
 		Arrays.sort(old);
 		return old;

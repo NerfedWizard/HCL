@@ -1,8 +1,5 @@
 package com.day1;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Day1Java {
@@ -69,7 +66,9 @@ public class Day1Java {
 		System.out.println(getLargestWord(st));
 		System.out.println(smallestNumber(6, 9, 0));
 		System.out.println(middleChar("12"));
-
+		s3.close();
+		s1.close();
+		sc.close();
 	}
 
 	public static void countVowels(String str) {
@@ -124,6 +123,7 @@ public class Day1Java {
 		return longest;
 	}
 
+	@SuppressWarnings("unused")
 	private static int sumOfSquaresOfEvenDigits(int pos2) {
 		String chr = Integer.toString(pos2);
 		char[] ch = chr.toCharArray();
@@ -138,6 +138,7 @@ public class Day1Java {
 	}
 
 //problem 10
+	@SuppressWarnings("unused")
 	private static int checkSum(int pos) {
 		String chr = Integer.toString(pos);
 		char[] ch = chr.toCharArray();
