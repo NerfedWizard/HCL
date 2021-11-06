@@ -32,7 +32,25 @@ public class Day3 {
 		// Q5 Testing
 		String test5 = "HelloWorld";
 		System.out.println(stringRange(1, 1, test5));
+		
+		//Q6
+		String bob = "Bob";
+		String racecar = "racecar";
+		String helmet = "helmet";
+		System.out.println(palindrome("bob"));
 
+	}
+	//Q6
+	public static boolean palindrome(String check) {
+		char [] ch = check.toLowerCase().toCharArray();
+		String revCheck = "";
+		for(int i = check.length()-1; i >= 0; i--) {
+			revCheck+=ch[i];
+		}
+		if(revCheck.equals(check.toLowerCase())){
+			return true;
+		}
+		return false;
 	}
 
 	// Q5
