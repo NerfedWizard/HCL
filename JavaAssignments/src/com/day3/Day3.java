@@ -35,8 +35,13 @@ public class Day3 {
 		// Q5 Testing
 		String test5 = "HelloWorld";
 		System.out.println(stringRange(1, 1, test5));
+<<<<<<< HEAD
 
 		// Q6
+=======
+		
+		//Q6 Testing
+>>>>>>> 88f1136cdc8fef8c2076771622da60ad5747a8a9
 		String bob = "Bob";
 		String racecar = "racecar";
 		String helmet = "helmet";
