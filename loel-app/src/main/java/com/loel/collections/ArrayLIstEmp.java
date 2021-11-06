@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 class Emp implements Comparable<Emp> {
 	private int empId;
 	private String empName;
