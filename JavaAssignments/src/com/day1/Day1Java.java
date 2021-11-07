@@ -3,7 +3,6 @@ package com.day1;
 import java.util.Scanner;
 
 public class Day1Java {
-//	private static int total = 0;
 
 	public static void main(String[] args) {
 
