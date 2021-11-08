@@ -1,11 +1,17 @@
 //Day 1
+/**#1	Write a Java program to print the result of the following operations.  
+Test Data: 
+a. -5 + 8 * 6 
+b. (55+9) % 9  
+c. 20 + -3*5 / 8  
+d. 5 + 15 / 3 * 2 - 8 % 3 */ 
 //#1
     System.out.println("-5 + 8 * 6 = " + -5 + 8 * 6);
 	System.out.println("(55+9) % 9 = " + (55 + 9) % 9);
 	System.out.println("20 + -3*5 / 8 = " + 20 + -3 * 5 / 8);
 	int x = 5 + 15 / 3 * 2 - 8 % 3;
 	System.out.println("5 + 15 / 3 * 2 - 8 % 3 = " + x);
-//#2
+//#2 Write a Java program to print the sum (addition), multiply, subtract, divide and remainder of two numbers.  
 	int y = 20 + 4;
 	System.out.println("20 + 4 = " + y);
 	int x111 = 20 - 4;
@@ -13,7 +19,7 @@
 	System.out.println("20 * 4 = " + 20 * 4);
 	System.out.println("20 / 4 = " + 20 / 4);
 	System.out.println("20 % 4 = " + 20 % 4);
-//#3
+//#3 Write a Java program that takes three numbers as input to calculate and print the average of the numbers
 	int total = 0;
 		Scanner sc = new Scanner(System.in);
 		int x1 = 0;
@@ -25,7 +31,7 @@
 		} while (count < 3);
 		total = x1 / count;
 		System.out.println("The Average of the inputs is: " + total);
-//#4
+//#4 Write a Java program to swap two variables. 
 	int x11 = 3;
 	int y1 = 5;
 	swap(x11, y1);
@@ -37,5 +43,123 @@
 		System.out.println("x = " + x + " y = " + y);
 
 	}
-//#5
-	
+//5. Write a java program, which will take a number variable and check whether the number is prime or not. 
+	// 5
+		System.out.println("Is 3 prime? " + primeNumber(x11));
+		System.out.println("Is 21 prime? " + primeNumber(21));
+		System.out.println("31 " + primeNumber(31));
+		System.out.println("43 " + primeNumber(43));
+		System.out.println("51 " + primeNumber(51));
+		System.out.println("109 " + primeNumber(109));
+		System.out.println("110 " + primeNumber(110));
+		System.out.println("111 " + primeNumber(111));
+		System.out.println("223 " + primeNumber(223));
+		
+	//5
+	private static boolean primeNumber(int x) {
+		int check1 = 3;
+		if (x == check1) {
+			return true;
+		}
+		int check2 = 2;
+		if (x == check2) {
+			return true;
+		}
+		if (x % check1 != 0 && x % check2 != 0) {
+			return true;
+		}
+		return false;
+	}
+/**6. Write a Java program to print the ascii value of a given character. */
+		System.out.println("Enter the character: ");
+		Scanner s1 = new Scanner(System.in);
+		String s = s1.next();
+		char c = s.charAt(0);
+
+		System.out.println(valueOfChar(c));
+//6
+private static int valueOfChar(char c) {
+	return (int) c;
+}
+/**Write a Java program which iterates the integers from 1 to 100. 
+For multiples of three print "Fizz" instead of the number and print "Buzz" for the multiples of five. 
+When number is divided by both three and five, print "fizz buzz". */
+fizzBuzz();
+//7
+private static void fizzBuzz() {
+		for (int i = 1; i <= 100; i++) {
+			if (i % 15 == 0) {
+				System.out.println("Fizz Buzz");
+			} else if (i % 5 == 0) {
+				System.out.println("Buzz");
+			} else if (i % 3 == 0) {
+				System.out.println("Fizz");
+			} else {
+				System.out.println(i);
+			}
+		}
+	}
+	/**Write a program to read a number and calculate the sum of odd digits (values) present in the given number. 
+Create a class with a static method checkSum which accepts a positive integer. The return type should be 1 if the sum is odd. In case the sum is even return -1 as output. 
+Create a class Main which would get the input as a positive integer and call the static method checkSum present in the UserMainCode. 
+*/
+if (checkSum(12345) == -1) {
+			System.out.println("Sum of odd digits is even");
+		} else {
+			System.out.println("Sum of odd digits is odd");
+		}
+//problem 8
+	private static int checkSum(int pos) {
+		String chr = Integer.toString(pos);
+		char[] ch = chr.toCharArray();
+		int x = 0;
+		for (int i = 0; i < ch.length - 1; i++) {
+			if ((int) ch[i] % 2 != 0) {
+				x = x + (int) ch[i];
+			}
+		}
+		if (x % 2 == 0) {
+			x = -1;
+		} else {
+			x = 1;
+		}
+		return x;
+	}
+	/**Write a program to read a number, calculate the sum of squares of even digits (values) present in the given number.  */
+	System.out.println("Question 9= " + sumOfSquaresOfEvenDigits(56895));
+	//9
+	private static int sumOfSquaresOfEvenDigits(int pos2) {
+		String chr = Integer.toString(pos2);
+		char[] ch = chr.toCharArray();
+		int sum = 0;
+		for (char c : ch) {
+			if ((int) c % 2 == 0) {
+				sum += Math.pow(((int) c - 48), 2);
+			}
+		}
+		return sum;
+
+	}
+	/**Write a Program which finds the longest word from a sentence. 
+	Your program should read a sentence as input from user and return the longest word. 
+	In case there are two words of maximum length return the word which comes first in the sentence. */
+	//Q10
+	    String st = "";
+		Scanner s3 = new Scanner(System.in);
+		System.out.println("Enter an Sentence: ");
+		st = s3.nextLine();
+	//Q10 
+	public static String getLargestWord(String sen) {
+		String[] str = sen.split(" ");
+		int max = 0;
+		String longest = "";
+		for (String s : str) {
+			System.out.println(s);
+			int min = s.length();
+			if (min > max) {
+				max = min;
+				longest = s;
+			}
+		}
+		return longest;
+	}

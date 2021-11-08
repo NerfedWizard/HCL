@@ -1,5 +1,5 @@
 //Day 2
-//#1
+//#1.Write a Java method to find the smallest number among three numbers. 
 public static int smallestNumber(int x, int y, int z) {
 		int min = y;
 		if (y > x) {
@@ -10,7 +10,7 @@ public static int smallestNumber(int x, int y, int z) {
 		}
 		return min;
 	}
-//#2
+//#2 Write a Java method to display the middle character of a string.  
 public static String middleChar(String find) {
 		char[] str = find.toCharArray();
 		String middle = "";
@@ -22,7 +22,7 @@ public static String middleChar(String find) {
 		}
 		return middle;
 	}
-//#3
+//#3Write a Java method to count all vowels in a string.  
 public static void countVowels(String str) {
 		char[] st = str.toLowerCase().toCharArray();
 		char[] vls = { 'a', 'e', 'i', 'o', 'u' };
@@ -36,7 +36,7 @@ public static void countVowels(String str) {
 		}
 		System.out.println("Number of Vowels in the string: " + count);
 	}
-//#4
+//#4.Write a program to create a room class, the attributes of this class is roomno, roomtype, roomarea and ACmachine. In this class the member functions are setdata and displaydata. 
 public class Room {
 	private int roomNo;
 	private String roomType;
@@ -87,34 +87,28 @@ public class Room {
 	}
 
 }
-//#5
+//#5.Create class named as ‘A’ and create a sub class ‘B’. Which is extends from class ‘A’. And use these classes in ‘inherit’ class. 
 public class A {
-	int a = 100;
+	String square = "square";
+	String rectangle = "rectangle";
 
-	public void display() {
-		System.out.printf("a in A = %d\n", a);
+	void shape() {
+		System.out.println("Quadrilateral");
 	}
-
 }
 
 class B extends A {
-	private int a = 123;
+	String shape = "trapezoid";
 
-	public void display() {
-		System.out.printf("a in B = %d\n", a);
+	public static void main(String[] args) {
+		B obj = new B();
+		System.out.println(obj.rectangle);
+		System.out.println(obj.square);
+		System.out.println(obj.shape);
+		obj.shape();
 	}
-
 }
-
-class C extends B {
-	private int a = 543;
-
-	public void display() {
-		System.out.printf("a in C = %d\n", a);
-	}
-
-}
-//#6
+//#6Your task is to create the class Addition and the required methods so that the code prints the sum of the numbers passed to the function addition. 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -140,7 +134,7 @@ public class Addition {
 		}
 	}
 }
-//#7
+//#7You are given a partially completed code in the editor. Modify the code so that the code prints the following text: 
 public class InheritenceExample {
 
 	public static void main(String[] args) {
@@ -169,7 +163,7 @@ class Cycle {
 	}
 
 }
-//#8
+//#8. Consider the below code and you must add a ‘bark method to the Dog class, then modify the main method accordingly so that the code prints the following lines: 
 class Animal {
 	void walk() {
 		System.out.println("I am walking");
