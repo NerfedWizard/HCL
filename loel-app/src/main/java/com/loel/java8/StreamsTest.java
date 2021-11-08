@@ -1,12 +1,15 @@
 package com.loel.java8;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamsTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// Integer Stream
 		IntStream.range(1, 10).forEach(System.out::println);
 
@@ -24,6 +27,9 @@ public class StreamsTest {
 
 		Arrays.stream(names)// almost equal to Stream.of()
 				.filter(x -> x.startsWith("M")).sorted().forEach(System.out::println);
+
+		Stream<String> bands = Files.lines(Paths.get("bands.txt"));
+		bands.sorted().filter(x -> x.length() > 10).forEach(System.out::println);
 		;
 
 	}
