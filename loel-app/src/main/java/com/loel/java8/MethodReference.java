@@ -21,7 +21,7 @@ public class MethodReference {
 		Print print = MethodReference::printDisplay;
 		print.test();
 
-		;
+		
 		List<String> list = new ArrayList<>();
 		list.add("loel");
 		list.add("Divanshu");
