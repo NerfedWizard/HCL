@@ -1,6 +1,8 @@
 package com.loel.java8;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamsTest {
 
@@ -15,6 +17,14 @@ public class StreamsTest {
 
 		System.out.println();
 		System.out.println(IntStream.range(1, 5).sum());
+
+		Stream.of("ABC", "Def", "Ghi").sorted().findFirst().ifPresent(System.out::println);
+
+		String[] names = { "Behar", "Mohit", "Mani", "Shashank", "Saran", "Bryan" };
+
+		Arrays.stream(names)// almost equal to Stream.of()
+				.filter(x -> x.startsWith("M")).sorted().forEach(System.out::println);
+		;
 
 	}
 
