@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -27,10 +29,14 @@ public class StreamsTest {
 
 		Arrays.stream(names)// almost equal to Stream.of()
 				.filter(x -> x.startsWith("M")).sorted().forEach(System.out::println);
-
+		System.out.println("-----------------------------");
 		Stream<String> bands = Files.lines(Paths.get("bands.txt"));
 		bands.sorted().filter(x -> x.length() > 10).forEach(System.out::println);
-		;
+		bands.close();
+		System.out.println("-----------------------------");
+		List<String> bands2 = Files.lines(Paths.get("bands.txt")).filter(x -> x.contains("jit"))
+				.collect(Collectors.toList());
+		bands2.forEach(System.out::println);
 
 	}
 
