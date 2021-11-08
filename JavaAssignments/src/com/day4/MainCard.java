@@ -3,7 +3,7 @@ package com.day4;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-/** Question 3 Day 4 testing File for Card class and its  */
+/** Question 3 Day 4 testing File for Card class and its instances */
 public class MainCard {
 	static String holderName;
 	static String cardNumber;
