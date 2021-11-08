@@ -1,27 +1,30 @@
 package com.day2;
 
-//Day 2 question 8
-class Animal {
-	void walk() {
-		System.out.println("I am walking");
-	}
-}
-
-class Dog extends Animal {
-	void eat() {
-		System.out.println("I am eating");
-	}
-
-	void bark() {
-		System.out.println("I am barking");
-	}
-}
-
 public class InheritenceExample {
+
 	public static void main(String[] args) {
-		Dog dog = new Dog();
-		dog.walk();
-		dog.eat();
-		dog.bark();
+		Bike M = new Bike();
 	}
+
+}
+
+class Bike extends Cycle {
+	String define_me() {
+		return "a cycle with an engine.";
+	}
+
+	Bike() {
+		Cycle cyc = new Cycle();
+		System.out.println("Hello I am a motorcycle I am " + define_me());
+		String temp = cyc.define_me();
+		System.out.println("My ancestor is a cycle who is " + temp);
+	}
+
+}
+
+class Cycle {
+	String define_me() {
+		return "a vehicle with pedals.";
+	}
+
 }

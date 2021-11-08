@@ -58,6 +58,13 @@ public class Day1Java {
 		System.out.println(valueOfChar(c));
 		countVowels("HCL AEIoUTechnologies");
 		fizzBuzz();
+		if (checkSum(12345) == -1) {
+			System.out.println("Sum of odd digits is even");
+		} else {
+			System.out.println("Sum of odd digits is odd");
+		}
+//		System.out.println(checkSum(12345));
+		System.out.println("Question 9= " + sumOfSquaresOfEvenDigits(25));
 		String st = "";
 		Scanner s3 = new Scanner(System.in);
 		System.out.println("Enter an Sentence: ");
@@ -122,7 +129,6 @@ public class Day1Java {
 		return longest;
 	}
 
-	@SuppressWarnings("unused")
 	private static int sumOfSquaresOfEvenDigits(int pos2) {
 		String chr = Integer.toString(pos2);
 		char[] ch = chr.toCharArray();
@@ -136,8 +142,7 @@ public class Day1Java {
 
 	}
 
-//problem 10
-	@SuppressWarnings("unused")
+//problem 8
 	private static int checkSum(int pos) {
 		String chr = Integer.toString(pos);
 		char[] ch = chr.toCharArray();
@@ -157,13 +162,12 @@ public class Day1Java {
 
 	private static void fizzBuzz() {
 		for (int i = 1; i <= 100; i++) {
-			if (i % 5 == 0) {
-				System.out.println(i + "Buzz");
-				if (i % 3 == 0) {
-					System.out.println(i + "Fizz Buzz");
-				}
+			if (i % 15 == 0) {
+				System.out.println("Fizz Buzz");
+			} else if (i % 5 == 0) {
+				System.out.println("Buzz");
 			} else if (i % 3 == 0) {
-				System.out.println(i + "Fizz");
+				System.out.println("Fizz");
 			} else {
 				System.out.println(i);
 			}

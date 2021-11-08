@@ -1,5 +1,5 @@
-package com.day1;
-
+package com.day2;
+//Q4
 public class Room {
 	private int roomNo;
 	private String roomType;

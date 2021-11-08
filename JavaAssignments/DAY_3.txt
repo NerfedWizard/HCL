@@ -57,3 +57,135 @@ public static String replace(String old) {
 			}
 		}
 /**5.	Accept a string, and two indices(integers), and print the substring consisting of all characters inclusive range from ..to .  */
+	// Q5 Testing
+		String test5 = "HelloWorld";
+		System.out.println(stringRange(1, 1, test5));
+		
+		// Q5
+	private static String stringRange(int first, int last, String test5) {
+		String result = "";
+		char[] chr = test5.toCharArray();
+		if (first > last) {
+			int temp = first;
+			first = last;
+			last = temp;
+		} else if (first == last) {
+			last++;
+		}
+		if (last <= test5.length() - 1 || first > 0) {
+			for (int i = first; i < last; i++) {
+				result += chr[i];
+			}
+		} else {
+			return "Index(es) out of bounds for string!!!!";
+		}
+		return result;
+	}
+	
+	/**6.	Given a string , print ‘Yes’ if it is a palindrome, print ‘No’ otherwise.  
+			Sample Input 
+			madam 
+			Sample Output 
+			Yes 
+			*/
+		//Q6 Testing
+		String bob = "Bob";
+		String racecar = "racecar";
+		String helmet = "helmet";
+		System.out.println(palindrome("bob"));
+		// Q6
+	public static boolean palindrome(String check) {
+		char[] ch = check.toLowerCase().toCharArray();
+		String revCheck = "";
+		for (int i = check.length() - 1; i >= 0; i--) {
+			revCheck += ch[i];
+		}
+		if (revCheck.equals(check.toLowerCase())) {
+			return true;
+		}
+		return false;
+	}
+/**7.	Write a program to find the given string is pangram or not. 
+(Hint: Pangrams are words or sentences containing every letter of the alphabet at least once) 
+*/
+	//Q7 Testing
+		String full = "The quick brown fox jumped over the lazy dogs back";
+		String half = "This is my test sentence";
+		pangram(full);
+		
+	// Q7
+	private static void pangram(String full) {
+		String[] alpha = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+				"s", "t", "u", "v", "w", "x", "y", "z" };
+		char[] check = full.toLowerCase().toCharArray();
+		Arrays.sort(check);
+		Set<String> checkD = new HashSet<>();
+		String result = "This is a Pangram!!!!";
+		for (int i = 0; i < check.length; i++) {
+			Character temp = check[i];
+			checkD.add(temp.toString());
+		}
+		for (String s : alpha) {
+			if (!checkD.contains(s)) {
+				result = "Not a Pangram";
+			}
+		}
+		System.out.println(result);
+	}
+	/**8.	Write a program to read a string and return a modified string based on the following rules. 
+Return the String without the first 2 characters except when 
+a.	Keep the first char if it is 'k' 
+b.	Keep the second char if it is 'b'. 
+*/
+/**Question 8*/
+public class UserMainCode {
+
+	public static void main(String[] args) {
+		String erin = "erin";
+		String honey = "Honey";
+		String khan = "khan";
+		String kitchen = "kitchen";
+		System.out.println(getString(kitchen));
+	}
+
+	public static String getString(String old) {
+		char[] ch = old.toLowerCase().toCharArray();
+		String chngd = "";
+		for (int i = 0; i < ch.length; i++) {
+			if (i <= 1 && (ch[i] == 'h' || ch[i] == 'k')) {
+				chngd += ch[i];
+			} else if (i > 1) {
+				chngd += ch[i];
+			}
+
+		}
+		return chngd;
+	}
+
+}
+/**9.	Write a program to read a string and a character, and reverse the string and convert it in a 
+		format such that each character is separated by the given character. Print the final string. */
+/**
+ * Question 9 Take a string and reverse it and place a char in between each
+ * character
+ */
+public class UserMainCode1 {
+	public static void main(String[] args) {
+		char a = '+';
+		String rabbit = "rabbit";
+		System.out.println(reverseAddChar(rabbit, a));
+	}
+
+	public static String reverseAddChar(String old, char sep) {
+		String result = "";
+		char[] chngd = old.toLowerCase().toCharArray();
+		for (int i = chngd.length - 1; i >= 0; i--) {
+			result += chngd[i];
+			if (i != 0) {
+				result += sep;
+			}
+		}
+		return result;
+	}
+}	
+		
