@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.loel.java8.Emp1;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,10 @@ class Emp implements Comparable<Emp> {
 	private int empId;
 	private String empName;
 	private int empAge;
+//	private String gender;
+//	private String dept;
+//	private int yoj;
+//	private double pay;
 
 	@Override
 	public int compareTo(Emp emp) {
@@ -60,7 +66,12 @@ public class ArrayLIstEmp {
 		Emp e3 = new Emp(113, "Mani", 31);
 		Emp e4 = new Emp(114, "Sashank", 32);
 		Emp e5 = new Emp(115, "Justin", 22);
-
+//		Emp emp1 = new Emp("0001","Loel","37","Male",2021,60000);
+//		Emp emp2 = new Emp("0002","Jones","30","Male",2009,120000);
+//		Emp emp3 = new Emp("0003","Ava","25","Female",2007,200000);
+//		Emp emp4 = new Emp("0004","Gary","42","Male",2015,10000);
+//		Emp emp5 = new Emp("0005","Veronica","62","NA",2001,650000);
+//		Emp emp6 = new Emp("0006","Fido","18","Female",2019,60000);
 		List<Emp> list = new ArrayList<>();
 		list.add(e1);
 		list.add(e2);

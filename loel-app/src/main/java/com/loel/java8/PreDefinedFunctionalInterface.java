@@ -40,30 +40,29 @@ public class PreDefinedFunctionalInterface {
 		predicate.stream().filter(names).forEach(System.out::println);
 
 		System.out.println("_______________________________________________________________-");
-		
-		/**Function -> take one argument and produce a result (SAM)*/
+
+		/** Function -> take one argument and produce a result (SAM) */
 		List<String> func = Arrays.asList("USA", "India", "China", "Australia", "Japan", "Indonesia");
-		Function<String,Integer> countryMap= String::length;
-		List<Integer> countryLength=func.stream().map(countryMap).collect(Collectors.toList());
+		Function<String, Integer> countryMap = String::length;
+		List<Integer> countryLength = func.stream().map(countryMap).collect(Collectors.toList());
 		System.out.println(countryLength);
-		
+
 		/**
 		 * Java 8 Assignment Due Monday 8th, 2021
-		 * Emp{id,name,age,gender,dept,yearofjoining,salary}
-		 * Emp -> 111,"Loel",24,Male,CS,2010,2021,123456 
+		 * Emp{id,name,age,gender,dept,yearofjoining,salary} Emp ->
+		 * 111,"Loel",24,Male,CS,2010,2021,123456
 		 * 
-		 * i) How many male and female employees are there?
-		 * ii) Find out average age of male and female employees?
-		 * iii) Find the highest paid employee in this employee class?
-		 * iv) List all the names of employees who have joined after 2016?
-		 * v)Find out most senior employee in this emp class?
-		 * vi) Count the number of employees in each dept?
-		 * vii) Find male and female employees are there in the CS dept and Mechanical dept?
-		 * viii) Find the average salary of male and female employees?
-		 * ix) Differentiate the employess who are younger or equal to 30yrs from those employees who are older than 25 yrs?
-		 * x)List down the names of all employees in each dept? 
-		 * */
-		
+		 * i) How many male and female employees are there? ii) Find out average age of
+		 * male and female employees? iii) Find the highest paid employee in this
+		 * employee class? iv) List all the names of employees who have joined after
+		 * 2016? v)Find out most senior employee in this emp class? vi) Count the number
+		 * of employees in each dept? vii) Find male and female employees are there in
+		 * the CS dept and Mechanical dept? viii) Find the average salary of male and
+		 * female employees? ix) Differentiate the employess who are younger or equal to
+		 * 30yrs from those employees who are older than 25 yrs? x)List down the names
+		 * of all employees in each dept?
+		 */
+
 	}
 
 }
