@@ -1,11 +1,13 @@
 package com.loel.java;
 
+import com.loel.java8.Emp1;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 //class Emp will become a POJO(Plain Old Java Object)
-@Data // Annotation-> Metadata ->data about data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 class Employee implements Cloneable { // Marker interface-> there is no abstract method
