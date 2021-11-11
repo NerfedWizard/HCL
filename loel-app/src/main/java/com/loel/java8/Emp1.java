@@ -47,9 +47,9 @@ public class Emp1 {
 				.min(Comparator.comparingInt(Emp1::getAge));
 
 		System.out.println(youngestMale);
-		
-		average(Predicate<Emp1> gndrList = empList.stream().filter(str -> str.getGender() == "Female").);
-		//Find the number of male and female employees
+		/** Using this to get the average age of the genders in the company */
+//		average(Predicate<Emp1> gndrList = empList.stream().filter(str -> str.getGender() == "Female");
+		// Find the number of male and female employees
 //		Optional<Emp1> numberOfEmp = createEmp().stream().filter(str -> str.getGender() == "Male" && )
 	}
 
