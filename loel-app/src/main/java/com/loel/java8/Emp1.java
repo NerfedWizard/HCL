@@ -118,7 +118,9 @@ public class Emp1 {
 	public static int average(List<Emp1> list) {
 		int totalAge = 0;
 		int averageAge = 0;
-//		int counter = counter + age;;
+//		for() {
+//			
+//		}
 		return averageAge;
 	}
 }
