@@ -113,8 +113,17 @@ public class Emp1 {
 			System.out.println(((Emp1) young[x]).getName() + " is " + ((Emp1) young[x]).getAge());
 		}
 		System.out.println();
+
+		/** Gets a list of employees by department */
 		for (int x = 0; x < young.length; x++) {
 			System.out.println(((Emp1) old[x]).getName() + " is " + ((Emp1) old[x]).getAge());
+		}
+		Map<String, List<Emp1>> empDeptList = empList.stream().collect(Collectors.groupingBy(Emp1::getDept));
+		for (Map.Entry<String, List<Emp1>> entry : empDeptList.entrySet()) {
+			System.out.println("\n" + entry.getKey() + "\n~~~~~~~~~~~");
+			for (Emp1 ls : entry.getValue()) {
+				System.out.println(ls.getName());
+			}
 		}
 	}
 
