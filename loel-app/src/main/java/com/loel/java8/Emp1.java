@@ -2,35 +2,14 @@ package com.loel.java8;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import lombok.*;
-
-/**
- * Java 8 Assignment Due Monday 8th, 2021
- * Emp{id,name,age,gender,dept,yearofjoining,salary} Emp ->
- * 111,"Loel",24,Male,CS,2010,2021,123456
- * 
- * i) How many male and female employees are there? ii) Find out average age of
- * male and female employees? iii) Find the highest paid employee in this
- * employee class? iv) List all the names of employees who have joined after
- * 2016? v)Find out most senior employee in this emp class? vi) Count the number
- * of employees in each dept? vii) Find male and female employees are there in
- * the CS dept and Mechanical dept?
- * 
- * viii) Find the average salary of male and female employees?
- * 
- * ix) Differentiate the employees who are younger or equal to 30yrs from those
- * employees who are older than 25 yrs? x)List down the names of all employees
- * in each dept?
- */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
