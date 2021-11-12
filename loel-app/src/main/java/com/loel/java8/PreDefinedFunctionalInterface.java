@@ -34,7 +34,7 @@ public class PreDefinedFunctionalInterface {
 
 		System.out.println("_______________________________________________________________-");
 
-		/** Predicate -> represents a boolean valued function of an argument */
+		/** Predicate -> represents a boolean valued function of an argument */ 
 		List<String> predicate = Arrays.asList("USA", "India", "China", "Australia", "Japan", "Indonesia");
 		Predicate<String> names = str -> str.startsWith("I");
 		predicate.stream().filter(names).forEach(System.out::println);
