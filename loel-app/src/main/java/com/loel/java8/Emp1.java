@@ -61,18 +61,22 @@ public class Emp1 {
 		System.out.println("Average age of Female Employees: " + averageFemaleAge + "\n");
 
 		/** Gets the highest paid employees salary */
-		System.out.println(
-				"The top paid employee: \n" + empList.stream().max(Comparator.comparing(Emp1::getSalary)) + "\n");
+		System.out.println("The top paid employee: \n"
+				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getName() + " "
+				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getSalary() + "\n");
 
 		/** List of employees who joined after 2016 */
 		Consumer<Emp1> printJunior = j -> System.out.println("Joined After 2016: \n" + j + "\n");
-		Stream<Emp1> juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016);
-		juniorEmp.forEach(printJunior);
+		List<Emp1> juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016).toList();
+		for (Emp1 e : juniorEmp) {
+			System.out.println("Joined After 2016: \n" + e.getName() + "\n");
+		}
 		System.out.println();
 
 		/** Most senior employee */
-		System.out.println(
-				"Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
+		System.out.println("Most Senior Employee: \n"
+				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getName() + " "
+				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getYearOfJoining());
 		System.out.println();
 
 		/** Number of employees in each department */
@@ -112,13 +116,6 @@ public class Emp1 {
 		for (int x = 0; x < young.length; x++) {
 			System.out.println(((Emp1) old[x]).getName() + " is " + ((Emp1) old[x]).getAge());
 		}
-//		for (Emp1 e : young) {
-//			System.out.println(e.getName() + " is " + e.getAge());
-//		}
-//		System.out.println();
-//		for (Emp1 e : old) {
-//			System.out.println(e.getName() + " is " + e.getAge());
-//		}
 	}
 
 	/**
