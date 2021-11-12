@@ -66,10 +66,6 @@ public class Emp1 {
 		/**
 		 * Gets the highest paid employees salary
 		 */
-		System.out.println(
-				"The top paid employee: \n" + empList.stream().max(Comparator.comparing(Emp1::getSalary)) + "\n");
-
-		/** Gets the highest paid employees salary */
 		System.out.println("The top paid employee: \n"
 				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getName() + " "
 				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getSalary() + "\n");
@@ -86,9 +82,6 @@ public class Emp1 {
 		/**
 		 * Most senior employee
 		 */
-		System.out.println(
-				"Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
-		/** Most senior employee */
 		System.out.println("Most Senior Employee: \n"
 				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getName() + " "
 				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getYearOfJoining());
