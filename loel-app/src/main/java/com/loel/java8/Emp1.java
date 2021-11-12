@@ -102,16 +102,23 @@ public class Emp1 {
 		System.out.println("Average Male salary: " + m / i + "\n");
 
 		/** Separate the employees into two groups 30>= x > 0, 30 < n */
-		List<Emp1> young = empList.stream().filter(str -> str.getAge() <= 30).toList();
-		List<Emp1> old = empList.stream().filter(s -> s.getAge() > 30).toList();
+		Object[] young = empList.stream().filter(str -> str.getAge() <= 30).toArray();
+		Object[] old = empList.stream().filter(s -> s.getAge() > 30).toArray();
 
-		for (Emp1 e : young) {
-			System.out.println(e.getName() + " is " + e.getAge());
+		for (int x = 0; x < young.length; x++) {
+			System.out.println(((Emp1) young[x]).getName() + " is " + ((Emp1) young[x]).getAge());
 		}
 		System.out.println();
-		for (Emp1 e : old) {
-			System.out.println(e.getName() + " is " + e.getAge());
+		for (int x = 0; x < young.length; x++) {
+			System.out.println(((Emp1) old[x]).getName() + " is " + ((Emp1) old[x]).getAge());
 		}
+//		for (Emp1 e : young) {
+//			System.out.println(e.getName() + " is " + e.getAge());
+//		}
+//		System.out.println();
+//		for (Emp1 e : old) {
+//			System.out.println(e.getName() + " is " + e.getAge());
+//		}
 	}
 
 	/**
@@ -127,6 +134,12 @@ public class Emp1 {
 		emplRecords.add(new Emp1("0005", "Veronica", 62, "Female", "Development", 2001, 650000));
 		emplRecords.add(new Emp1("0006", "Fido", 18, "Female", "Development", 2019, 60000));
 		emplRecords.add(new Emp1("0007", "Jones", 21, "Female", "The Boss", 2000, 1000254));
+		emplRecords.add(new Emp1("0008", "Mike", 34, "Male", "Development", 2021, 65000));
+		emplRecords.add(new Emp1("0009", "Danni", 26, "Female", "HR", 2007, 175000));
+		emplRecords.add(new Emp1("0010", "Fredick", 51, "Male", "HR", 2015, 22000));
+		emplRecords.add(new Emp1("0011", "Erin", 68, "Female", "Development", 2001, 47500));
+		emplRecords.add(new Emp1("0012", "Dorthy", 43, "Female", "Development", 2019, 35600));
+		emplRecords.add(new Emp1("0013", "Mia", 27, "Female", "Vice President", 2000, 185246));
 		return emplRecords;
 	}
 }
