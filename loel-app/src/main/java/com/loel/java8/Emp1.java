@@ -2,34 +2,29 @@ package com.loel.java8;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import lombok.*;
 
 /**
- * Java 8 Assignment Due Monday 8th, 2021
- * Emp{id,name,age,gender,dept,yearofjoining,salary} Emp ->
- * 111,"Loel",24,Male,CS,2010,2021,123456
+ * Java 8 Assignment 
+ * Emp{id,name,age,gender,dept,yearofjoining,salary} Emp -> 111,"Loel",24,Male,CS,2010,2021,123456
  * 
- * i) How many male and female employees are there? ii) Find out average age of
- * male and female employees? iii) Find the highest paid employee in this
- * employee class? iv) List all the names of employees who have joined after
- * 2016? v)Find out most senior employee in this emp class? vi) Count the number
- * of employees in each dept? vii) Find male and female employees are there in
- * the CS dept and Mechanical dept?
- * 
+ * i) How many male and female employees are there? 
+ * ii) Find out average age of male and female employees? 
+ * iii) Find the highest paid employee in this employee class? 
+ * iv) List all the names of employees who have joined after 2016? 
+ * v)Find out most senior employee in this emp class? 
+ * vi) Count the number of employees in each dept? 
+ * vii) Find male and female employees are there in the CS dept and Mechanical dept?
  * viii) Find the average salary of male and female employees?
- * 
  * ix) Differentiate the employees who are younger or equal to 30yrs from those
- * employees who are older than 25 yrs? x)List down the names of all employees
- * in each dept?
+ * employees who are older than 25 yrs? 
+ * x)List down the names of all employees in each dept?
  */
 @Data
 @NoArgsConstructor
@@ -46,13 +41,17 @@ public class Emp1 {
 	public static void main(String[] args) {
 		List<Emp1> empList = new ArrayList<Emp1>(createEmp());
 
-		/** Finding the number of male/female employees */
+		/**
+		 * Finding the number of male/female employees
+		 */
 		int numMales = (int) empList.stream().filter(str -> str.getGender().startsWith("M")).count();
 		int numFemales = (int) empList.stream().filter(str -> str.getGender().startsWith("F")).count();
 		System.out.println("Number of Male Employees: " + numMales);
 		System.out.println("Number of Female Employees: " + numFemales + "\n");
 
-		/** Finding the average age of male/female employees */
+		/**
+		 * Finding the average age of male/female employees
+		 */
 		int averageMaleAge = empList.stream().filter(str -> str.getGender() == "Male").mapToInt(a -> a.getAge()).sum()
 				/ (int) (empList.stream().filter(str -> str.getGender() == "Male").count());
 		System.out.println("Average age of Male Employees: " + averageMaleAge);
@@ -60,27 +59,37 @@ public class Emp1 {
 				.sum() / (int) (empList.stream().filter(str -> str.getGender() == "Female").count());
 		System.out.println("Average age of Female Employees: " + averageFemaleAge + "\n");
 
-		/** Gets the highest paid employees salary */
+		/**
+		 * Gets the highest paid employees salary
+		 */
 		System.out.println(
 				"The top paid employee: \n" + empList.stream().max(Comparator.comparing(Emp1::getSalary)) + "\n");
 
-		/** List of employees who joined after 2016 */
+		/**
+		 * List of employees who joined after 2016
+		 */
 		Consumer<Emp1> printJunior = j -> System.out.println("Joined After 2016: \n" + j + "\n");
 		Stream<Emp1> juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016);
 		juniorEmp.forEach(printJunior);
 		System.out.println();
 
-		/** Most senior employee */
+		/**
+		 * Most senior employee
+		 */
 		System.out.println(
 				"Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
 		System.out.println();
 
-		/** Number of employees in each department */
+		/**
+		 * Number of employees in each department
+		 */
 		for (Map.Entry<String, Long> entry : empList.stream()
 				.collect(Collectors.groupingBy(Emp1::getDept, Collectors.counting())).entrySet()) {
 			System.out.println(entry.getKey() + " = " + entry.getValue());
 		}
-		/** Find average salary of male/female */
+		/**
+		 * Find average salary of male/female
+		 */
 		int f = 0;
 		int m = 0;
 		int i = 0;
@@ -101,7 +110,9 @@ public class Emp1 {
 		i = empList.size() - i;
 		System.out.println("Average Male salary: " + m / i + "\n");
 
-		/** Separate the employees into two groups 30>= x > 0, 30 < n */
+		/**
+		 * Separate the employees into two groups 30>= x > 0, 30 < n
+		 */
 		Object[] young = empList.stream().filter(str -> str.getAge() <= 30).toArray();
 		Object[] old = empList.stream().filter(s -> s.getAge() > 30).toArray();
 
@@ -112,13 +123,6 @@ public class Emp1 {
 		for (int x = 0; x < young.length; x++) {
 			System.out.println(((Emp1) old[x]).getName() + " is " + ((Emp1) old[x]).getAge());
 		}
-//		for (Emp1 e : young) {
-//			System.out.println(e.getName() + " is " + e.getAge());
-//		}
-//		System.out.println();
-//		for (Emp1 e : old) {
-//			System.out.println(e.getName() + " is " + e.getAge());
-//		}
 	}
 
 	/**
