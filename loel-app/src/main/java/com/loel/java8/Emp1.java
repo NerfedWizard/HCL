@@ -60,18 +60,19 @@ public class Emp1 {
 				"The top paid employee: \n" + empList.stream().max(Comparator.comparing(Emp1::getSalary)) + "\n");
 
 		/** List of employees who joined after 2016 */
-		Consumer<Emp1> printJunior = j -> System.out.println("Joined After 2016: \n" + j+"\n");
+		Consumer<Emp1> printJunior = j -> System.out.println("Joined After 2016: \n" + j + "\n");
 		Stream<Emp1> juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016);
 		juniorEmp.forEach(printJunior);
 		System.out.println();
 
 		/** Most senior employee */
-		System.out
-				.println("Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
+		System.out.println(
+				"Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
 		System.out.println();
 
 		/** Number of employees in each department */
-		
+//		System.out.println(empList.stream().forEach(Emp1 :: i.dept).count());
+//		List<Emp1> deptCount = empList.stream().filter(str -> str.getDept().).toList();
 	}
 
 	/**
