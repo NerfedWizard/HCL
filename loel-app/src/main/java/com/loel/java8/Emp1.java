@@ -25,11 +25,11 @@ import lombok.*;
  * of employees in each dept? vii) Find male and female employees are there in
  * the CS dept and Mechanical dept?
  * 
- * viii) Find the average salary of male and female employees? 
+ * viii) Find the average salary of male and female employees?
  * 
- * ix) Differentiate the employees who are younger or equal to 30yrs from those employees who are
- * older than 25 yrs? 
- * x)List down the names of all employees in each dept?
+ * ix) Differentiate the employees who are younger or equal to 30yrs from those
+ * employees who are older than 25 yrs? x)List down the names of all employees
+ * in each dept?
  */
 @Data
 @NoArgsConstructor
@@ -100,6 +100,18 @@ public class Emp1 {
 		System.out.println("\nAverage Female salary: " + f / i);
 		i = empList.size() - i;
 		System.out.println("Average Male salary: " + m / i + "\n");
+
+		/** Separate the employees into two groups 30>= x > 0, 30 < n */
+		List<Emp1> young = empList.stream().filter(str -> str.getAge() <= 30).toList();
+		List<Emp1> old = empList.stream().filter(s -> s.getAge() > 30).toList();
+
+		for (Emp1 e : young) {
+			System.out.println(e.getName() + " is " + e.getAge());
+		}
+		System.out.println();
+		for (Emp1 e : old) {
+			System.out.println(e.getName() + " is " + e.getAge());
+		}
 	}
 
 	/**
@@ -118,9 +130,3 @@ public class Emp1 {
 		return emplRecords;
 	}
 }
-// For finding the youngest male
-//Optional<Emp1> youngestMale = empList.stream()
-//		.filter(str -> str.getGender() == "Male" && str.getDept() == "Development")
-//		.min(Comparator.comparingInt(Emp1::getAge));
-//
-//System.out.println(youngestMale);
