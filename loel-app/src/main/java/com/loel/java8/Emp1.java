@@ -2,10 +2,13 @@ package com.loel.java8;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import lombok.*;
@@ -18,13 +21,15 @@ import lombok.*;
  * i) How many male and female employees are there? ii) Find out average age of
  * male and female employees? iii) Find the highest paid employee in this
  * employee class? iv) List all the names of employees who have joined after
- * 2016? v)Find out most senior employee in this emp class?
+ * 2016? v)Find out most senior employee in this emp class? vi) Count the number
+ * of employees in each dept? vii) Find male and female employees are there in
+ * the CS dept and Mechanical dept?
  * 
- * vi) Count the number of employees in each dept? vii) Find male and female
- * employees are there in the CS dept and Mechanical dept? viii) Find the
- * average salary of male and female employees? ix) Differentiate the employess
- * who are younger or equal to 30yrs from those employees who are older than 25
- * yrs? x)List down the names of all employees in each dept?
+ * viii) Find the average salary of male and female employees? 
+ * 
+ * ix) Differentiate the employees who are younger or equal to 30yrs from those employees who are
+ * older than 25 yrs? 
+ * x)List down the names of all employees in each dept?
  */
 @Data
 @NoArgsConstructor
@@ -71,8 +76,30 @@ public class Emp1 {
 		System.out.println();
 
 		/** Number of employees in each department */
-//		System.out.println(empList.stream().forEach(Emp1 :: i.dept).count());
-//		List<Emp1> deptCount = empList.stream().filter(str -> str.getDept().).toList();
+		for (Map.Entry<String, Long> entry : empList.stream()
+				.collect(Collectors.groupingBy(Emp1::getDept, Collectors.counting())).entrySet()) {
+			System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+		/** Find average salary of male/female */
+		int f = 0;
+		int m = 0;
+		int i = 0;
+		for (Map.Entry<String, Map<Integer, List<Emp1>>> entry : empList.stream()
+				.collect(Collectors.groupingBy(Emp1::getGender, Collectors.groupingBy(Emp1::getSalary))).entrySet()) {
+			if (entry.getKey().equals("Female")) {
+				for (Map.Entry<Integer, List<Emp1>> ent : entry.getValue().entrySet()) {
+					f += ent.getKey();
+					i++;
+				}
+			} else {
+				for (Map.Entry<Integer, List<Emp1>> ent : entry.getValue().entrySet()) {
+					m += ent.getKey();
+				}
+			}
+		}
+		System.out.println("\nAverage Female salary: " + f / i);
+		i = empList.size() - i;
+		System.out.println("Average Male salary: " + m / i + "\n");
 	}
 
 	/**
