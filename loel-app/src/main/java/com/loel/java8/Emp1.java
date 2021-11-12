@@ -37,74 +37,31 @@ public class Emp1 {
 	private String dept;
 	private int yoj;
 	private double pay;
-//	static int counter = 0;
 
 	public static void main(String[] args) {
 		List<Emp1> empList = new ArrayList<Emp1>(createEmp());
-		// For finding the youngest male
-		Optional<Emp1> youngestMale = empList.stream()
-				.filter(str -> str.getGender() == "Male" && str.getDept() == "Development")
-				.min(Comparator.comparingInt(Emp1::getAge));
 
-		System.out.println(youngestMale);
-		/** Using this to get the average age of the genders in the company */
-//		average(Predicate<Emp1> gndrList = empList.stream().filter(str -> str.getGender() == "Female");
-		// Find the number of male and female employees
-//		Optional<Emp1> numberOfEmp = createEmp().stream().filter(str -> str.getGender() == "Male" && )
+		/** Finding the number of male/female employees */
+		int numMales = (int) empList.stream().filter(str -> str.getGender().startsWith("M")).count();
+		int numFemales = (int) empList.stream().filter(str -> str.getGender().startsWith("F")).count();
+		System.out.println("Number of Male Employees: " + numMales);
+		System.out.println("Number of Female Employees: " + numFemales);
+
+		/** Finding the average age of male/female employees */
+		int averageMaleAge = empList.stream().filter(str -> str.getGender() == "Male").mapToInt(a -> a.getAge()).sum()
+				/ (int) (empList.stream().filter(str -> str.getGender() == "Male").count());
+		System.out.println("Average age of Male Employees: " + averageMaleAge);
+		int averageFemaleAge = empList.stream().filter(str -> str.getGender() == "Female").mapToInt(a -> a.getAge())
+				.sum() / (int) (empList.stream().filter(str -> str.getGender() == "Female").count());
+		System.out.println("Average age of Female Employees: " + averageFemaleAge);
 	}
 
-//		List<String> genX = new ArrayList<String>();
-//		List<Integer> agesM = new ArrayList<Integer>();
-//		List<Integer> agesF = new ArrayList<Integer>();
-//		int mAge = 0;
-//		int fAge = 0;
-//		for (Emp1 e : createEmp()) {
-//			genX.add(e.getGender());
-//			if (e.getGender().equals("Male")) {
-//				agesM.add(e.getAge());
-//			} else {
-//				agesF.add(e.getAge());
-//			}
-//		}
-//		for (Integer i : agesM) {
-//			mAge += i;
-//		}
-//
-//		for (Integer i : agesF) {
-//			fAge += i;
-//		}
 	/**
-	 * Look at geeks for geeks and use the predicate and functional programming from
-	 * java 8
+	 * Creating a list of Employees
+	 * 
+	 * @return List - employee list
 	 */
-// i) How many male and female employees are there?
-//		Predicate<String> g = str -> str.startsWith("M");
-//		Predicate<String> w = str -> str.startsWith("F");
-//		Integer m = (int) genX.stream().filter(g).count();
-//		Integer f = (int) genX.stream().filter(w).count();
-//		System.out.println("Total employees: " + genX.stream().count() + "\nTotal identify male: " + m
-//				+ "\nTotal indentify female: " + f);
-//		
-// ii) Find out average age of male and female employees?
-//	Change this to use the System.out::println
-//		System.out.println("Average age of males: " + (mAge / m));
-//		System.out.println("Average age of females: " + (fAge / f));
-
-// iii) Find the highest paid employee in this* employee class?
-
-	// Example to optimize it
-//		List<Emp1> list = new ArrayList<>();
-//		list.add(new Emp1("0001", "Loel", 37, "Male", "Development", 2021, 60000));
-//		Optional<Emp1> youngestMale = createEmp().stream()
-//				.filter(str -> str.getGender() == "Male" && str.getDept() == "Development")
-//				.min(Comparator.comparingInt(Emp1::getAge));
-//
-//		System.out.println(youngestMale);
-//	}
-
-// i)
 	public static List<Emp1> createEmp() {
-
 		List<Emp1> emplRecords = new ArrayList<Emp1>();
 		emplRecords.add(new Emp1("0001", "Loel", 37, "Male", "Development", 2021, 60000));
 		emplRecords.add(new Emp1("0003", "Ava", 25, "Female", "HR", 2007, 200000));
@@ -114,13 +71,10 @@ public class Emp1 {
 		emplRecords.add(new Emp1("0007", "Roger", 21, "Female", "The Boss", 2000, 1000254.88));
 		return emplRecords;
 	}
-
-	public static int average(List<Emp1> list) {
-		int totalAge = 0;
-		int averageAge = 0;
-//		for() {
-//			
-//		}
-		return averageAge;
-	}
 }
+// For finding the youngest male
+//Optional<Emp1> youngestMale = empList.stream()
+//		.filter(str -> str.getGender() == "Male" && str.getDept() == "Development")
+//		.min(Comparator.comparingInt(Emp1::getAge));
+//
+//System.out.println(youngestMale);
