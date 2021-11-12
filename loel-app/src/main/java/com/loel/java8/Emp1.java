@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import lombok.*;
 
@@ -26,6 +28,7 @@ import lombok.*;
  * employees who are older than 25 yrs? 
  * x)List down the names of all employees in each dept?
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -59,18 +62,25 @@ public class Emp1 {
 				.sum() / (int) (empList.stream().filter(str -> str.getGender() == "Female").count());
 		System.out.println("Average age of Female Employees: " + averageFemaleAge + "\n");
 
+
 		/**
 		 * Gets the highest paid employees salary
 		 */
 		System.out.println(
 				"The top paid employee: \n" + empList.stream().max(Comparator.comparing(Emp1::getSalary)) + "\n");
 
+		/** Gets the highest paid employees salary */
+		System.out.println("The top paid employee: \n"
+				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getName() + " "
+				+ empList.stream().max(Comparator.comparing(Emp1::getSalary)).get().getSalary() + "\n");
+
 		/**
 		 * List of employees who joined after 2016
 		 */
-		Consumer<Emp1> printJunior = j -> System.out.println("Joined After 2016: \n" + j + "\n");
-		Stream<Emp1> juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016);
-		juniorEmp.forEach(printJunior);
+		Object[] juniorEmp = empList.stream().filter(str -> str.getYearOfJoining() > 2016).toArray();
+		for (int j = 0; j < juniorEmp.length;j++) {
+			System.out.println("Joined After 2016: \n" + ((Emp1)juniorEmp[j]).getName() + "\n");
+		}
 		System.out.println();
 
 		/**
@@ -78,6 +88,10 @@ public class Emp1 {
 		 */
 		System.out.println(
 				"Most Senior Employee: \n" + empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)));
+		/** Most senior employee */
+		System.out.println("Most Senior Employee: \n"
+				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getName() + " "
+				+ empList.stream().min(Comparator.comparing(Emp1::getYearOfJoining)).get().getYearOfJoining());
 		System.out.println();
 
 		/**
@@ -120,8 +134,18 @@ public class Emp1 {
 			System.out.println(((Emp1) young[x]).getName() + " is " + ((Emp1) young[x]).getAge());
 		}
 		System.out.println();
+
+		/** Gets a list of employees by department */
 		for (int x = 0; x < young.length; x++) {
 			System.out.println(((Emp1) old[x]).getName() + " is " + ((Emp1) old[x]).getAge());
+		}
+
+		Map<String, List<Emp1>> empDeptList = empList.stream().collect(Collectors.groupingBy(Emp1::getDept));
+		for (Map.Entry<String, List<Emp1>> entry : empDeptList.entrySet()) {
+			System.out.println("\n" + entry.getKey() + "\n~~~~~~~~~~~");
+			for (Emp1 ls : entry.getValue()) {
+				System.out.println(ls.getName());
+			}
 		}
 	}
 
