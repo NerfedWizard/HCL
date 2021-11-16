@@ -31,7 +31,7 @@ public class App {
 		System.out.println(er.getEmpSal());
 		System.out.println("________________________________");
 		Session session2 = sf.openSession();
-		Employee er2 = session.load(Employee.class, new Integer(1003));
+		Employee er2 = session2.load(Employee.class, new Integer(1003));
 		System.out.println(er2.getEmpName());
 		System.out.println(er2.getEmpSal());
 		System.out.println("________________________________");
