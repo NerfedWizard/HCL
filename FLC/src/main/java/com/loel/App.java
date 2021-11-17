@@ -30,13 +30,14 @@ public class App {
 		System.out.println(er.getEmpName());
 		System.out.println(er.getEmpSal());
 		System.out.println("________________________________");
-//		Session session2 = sf.openSession();
+		Session session2 = sf.openSession();
 		Employee er2 = session.load(Employee.class, new Integer(1003));
 		System.out.println(er2.getEmpName());
 		System.out.println(er2.getEmpSal());
 		System.out.println("________________________________");
-//		sf.close();
-//		session.close();
 
+		session.close();
+		session2.close();
+		sf.close();
 	}
 }

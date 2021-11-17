@@ -42,43 +42,9 @@ public class PreparedStatementTest {
 
 	public static void main(String[] args) {
 		startDB();
-		for(String st : getUsername()) {
+		for (String st : getUsername()) {
 			System.out.println(st);
 		}
-		
-//		try
-//
-//		{
-//			// Connects to database
-////			Class.forName("com.mysql.cj.jdbc.Driver");
-//			conn = DriverManager.getConnection("jdbc:mysql://192.168.1.1:3306/p2K_district?useSSL=false", "root",
-//					"root");
-//
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-//
-//		try {
-//			Statement stmt = conn.createStatement();
-//			ResultSet rs = stmt.executeQuery("select username from user");
-//			StringBuilder returnResults = new StringBuilder("");
-//			while (rs.next()) {
-//				returnResults.append(rs.toString());
-//			}
-//
-//			System.out.println(returnResults.toString());
-////			preparedStatement.setString(1, "loelloel");
-////			preparedStatement.setString(2, "Loel");
-////			preparedStatement.setString(3, "MN");
-////			int row = preparedStatement.executeUpdate();
-//
-////			System.out.println(row);
-//
-//		} catch (SQLException e) {
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
 
 	}
 
