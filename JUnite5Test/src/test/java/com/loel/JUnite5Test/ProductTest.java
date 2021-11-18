@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 public class ProductTest {
 	@Test
 	public void productTest() {
-		fail("make test case fail");
+//		fail("make test case fail");
 		Product p1 = new Product();
 
-		Assertions.assertEquals(144, p1.multiply(12, 12));
+		Assertions.assertEquals(143, p1.multiply(12, 12));
 	}
 }
