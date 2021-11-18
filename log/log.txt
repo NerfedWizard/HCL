@@ -1,0 +1,9 @@
+Sample Warning message
+Sample Error message
+Sample Fatal Message
+Live without Warning
+Error in the matrix
+Fatallity
+Live without Warning
+Error in the matrix
+Fatallity
