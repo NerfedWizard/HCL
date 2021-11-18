@@ -11,6 +11,6 @@ public class ProductTest {
 //		fail("make test case fail");
 		Product p1 = new Product();
 
-		Assertions.assertEquals(143, p1.multiply(12, 12));
+		Assertions.assertEquals(144, p1.multiply(12, 12));
 	}
 }
