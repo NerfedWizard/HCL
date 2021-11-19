@@ -12,7 +12,4 @@ public class Address {
 	private String state;
 	private String country;
 
-	void printAddr() {
-		System.out.println("Name " + city + "\nState " + state + "\nCountry " + country);
-	}
 }

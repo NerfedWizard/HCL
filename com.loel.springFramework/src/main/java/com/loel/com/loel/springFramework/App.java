@@ -13,10 +13,10 @@ public class App {
 	public static void main(String[] args) {
 		Resource r = new ClassPathResource("spring.xml");
 		BeanFactory b = new XmlBeanFactory(r);
-		Product p1 = (Product) b.getBean("prd");
-		p1.print();
-		Product p2 = (Product) b.getBean("prod");
-		p2.print();
+//		Product p1 = (Product) b.getBean("prd");
+//		p1.print();
+//		Product p2 = (Product) b.getBean("prod");
+//		p2.print();
 		Emp e = (Emp) b.getBean("emp");
 		e.printEmp();
 	}
