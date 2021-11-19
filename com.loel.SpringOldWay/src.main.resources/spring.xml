@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- <bean id="prd" class="com.loel.com.loel.springFramework.Product">
+		<property name="prdId">
+			<value>100</value>
+		</property>
+		<property name="prdName">
+			<value>Laptop</value>
+		</property>
+		<property name="prdPrice">
+			<value>12345</value>
+		</property>
+	</bean>
+	<bean id="prod" class="com.loel.com.loel.springFramework.Product">
+		<constructor-arg value="111">
+		</constructor-arg>
+		<constructor-arg value="Loel">
+		</constructor-arg>
+		<constructor-arg value="1245">
+		</constructor-arg>
+	</bean> -->
+	<bean id="addr" class="com.loel.com.loel.springFramework.Address">
+		<constructor-arg value="McDonald">
+
+		</constructor-arg>
+		<constructor-arg value="PA">
+
+		</constructor-arg>
+		<constructor-arg value="USA">
+
+		</constructor-arg>
+	</bean>
+	<bean id="emp" class="com.loel.com.loel.springFramework.Emp">
+		<constructor-arg value="100">
+
+		</constructor-arg>
+		<constructor-arg value="Loel">
+
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="addr" />
+		</constructor-arg>
+	</bean>
+</beans>
